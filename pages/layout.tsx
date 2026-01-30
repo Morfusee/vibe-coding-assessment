@@ -21,7 +21,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import Switcher from "../ui/switcher";
+import Switcher from "../components/ui/switcher";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;

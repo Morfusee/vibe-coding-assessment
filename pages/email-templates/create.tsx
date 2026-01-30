@@ -1,5 +1,5 @@
 import EmailTemplateForm from "@/components/email-template-form";
-import DashboardLayout from "@/components/layout/dashboard-layout";
+import DashboardLayout from "@/pages/layout";
 import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";

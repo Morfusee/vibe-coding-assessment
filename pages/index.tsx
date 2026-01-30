@@ -1,6 +1,6 @@
-import DashboardLayout from "@/components/layout/dashboard-layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import DashboardLayout from "@/pages/layout";
 import { Calendar, ChevronDown, Download, FileText } from "lucide-react";
 import Head from "next/head";
 import {

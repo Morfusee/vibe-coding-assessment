@@ -1,5 +1,4 @@
 import EmailTemplatePreview from "@/components/email-template-preview";
-import DashboardLayout from "@/components/layout/dashboard-layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import DashboardLayout from "@/pages/layout";
 import { emailTemplateService } from "@/services/mock-email-template.service";
 import { EmailTemplate } from "@/types/email-template";
 import { Edit2, Eye, Loader2, Plus, Search } from "lucide-react";

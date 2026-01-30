@@ -1,5 +1,5 @@
 import EmailTemplateForm from "@/components/email-template-form";
-import DashboardLayout from "@/components/layout/dashboard-layout";
+import DashboardLayout from "@/pages/layout";
 import { emailTemplateService } from "@/services/mock-email-template.service";
 import { EmailTemplate } from "@/types/email-template";
 import { Loader2 } from "lucide-react";
