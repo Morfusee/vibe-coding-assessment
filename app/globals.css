@@ -28,8 +28,8 @@
   --color-custom-background: #eff1f6; /* Mockup BG */
   --color-custom-modal-overlay: rgba(154, 165, 177, 0.2); /* #9AA5B1 @ 20% */
 
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-heading: "DM Sans", system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-dm-sans), system-ui, sans-serif;
 }
 
 /* Base Styles */
