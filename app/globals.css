@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary-indigo-100: #19213c; /* Assumed correction for KC */
+  --color-primary-indigo-90: #4d3a8c;
+  --color-primary-indigo-80: #4d468c;
+  --color-primary-indigo-70: #4d55a8;
+  --color-primary-indigo-60: #4d5b88;
+  --color-primary-indigo-50: #847ac8;
+  --color-primary-indigo-40: #9d93d1;
+  --color-primary-indigo-30: #a9a1cb;
+  --color-primary-indigo-20: #b5d0e7;
+  --color-primary-indigo-10: #e8e8f9;
+
+  --color-primary-cool-gray-100: #1f2933;
+  --color-primary-cool-gray-90: #323f4b;
+  --color-primary-cool-gray-80: #3e4c59;
+  --color-primary-cool-gray-70: #52606d;
+  --color-primary-cool-gray-60: #616e7c;
+  --color-primary-cool-gray-50: #7b8794;
+  --color-primary-cool-gray-40: #9aa5b1; /* Reused for Modal Overlay as per spec */
+  --color-primary-cool-gray-30: #cbd2d9;
+  --color-primary-cool-gray-20: #e4e7eb;
+  --color-primary-cool-gray-10: #f5f7fa;
+
+  --color-supporting-red-60: #e12d39; /* Error */
+
+  --color-custom-background: #eff1f6; /* Mockup BG */
+  --color-custom-modal-overlay: rgba(154, 165, 177, 0.2); /* #9AA5B1 @ 20% */
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "DM Sans", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-custom-background);
+  color: var(--color-primary-cool-gray-80);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary-cool-gray-100);
+}
+
+/* Links */
+a {
+  color: var(--color-primary-indigo-70);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-cool-gray-30);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-cool-gray-50);
 }
