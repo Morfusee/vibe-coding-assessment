@@ -45,7 +45,7 @@ const SidebarItem = ({
   const content = (
     <div
       className={cn(
-        "flex items-center justify-between px-3 py-2 rounded-md transition-colors cursor-pointer text-sm font-medium",
+        "flex items-center justify-between px-6 py-4 transition-colors cursor-pointer text-sm font-medium",
         isActive
           ? "bg-(--color-primary-indigo-70) text-white"
           : "text-(--color-primary-cool-gray-80) hover:bg-(--color-primary-cool-gray-10)",
@@ -72,7 +72,7 @@ const SidebarSection = ({
 }) => (
   <div className="mb-4">
     {title && (
-      <h3 className="px-3 mb-2 text-xs font-bold text-(--color-primary-cool-gray-50) uppercase tracking-wider">
+      <h3 className="mb-2 px-3 text-xs font-bold text-(--color-primary-cool-gray-50) uppercase tracking-wider">
         {title}
       </h3>
     )}
@@ -99,16 +99,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           </Button>
         </div>
 
-        <div className="px-3 py-2">
-          <SidebarItem
-            icon={Home}
-            label="Dashboard"
-            href="/"
-            isActive={path === "/"}
-          />
-        </div>
+        <SidebarItem
+          icon={Home}
+          label="Dashboard"
+          href="/"
+          isActive={path === "/"}
+        />
 
-        <div className="flex-1 px-3 py-2 space-y-6">
+        <div className="flex-1 py-2 space-y-6">
           <SidebarSection title="Company">
             <SidebarItem icon={Users} label="Recipient" />
           </SidebarSection>
@@ -119,7 +117,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           </SidebarSection>
 
           <SidebarSection title="Template">
-            {/* Only clickable item as requested */}
+            {/* Only clickable item */}
             <SidebarItem
               icon={FileText}
               label="Email Templates"
