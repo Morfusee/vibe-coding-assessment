@@ -1,16 +1,7 @@
 import DashboardLayout from "@/components/layout/dashboard-layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Calendar,
-  CheckCircle,
-  Clock,
-  Download,
-  FileText,
-  Send,
-  Users,
-  XCircle,
-} from "lucide-react";
+import { Calendar, ChevronDown, Download, FileText } from "lucide-react";
 import Head from "next/head";
 import {
   CartesianGrid,
@@ -65,8 +56,8 @@ const SummaryCard = ({
   <Card className="shadow-sm border-(--color-primary-cool-gray-20)">
     <CardContent className="p-6 flex flex-col justify-between h-full">
       <div className="flex items-start gap-4 mb-4">
-        <div className={`p-2 rounded-md ${colorClass} bg-opacity-10`}>
-          <Icon className={`h-5 w-5 ${colorClass.replace("bg-", "text-")}`} />
+        <div className={`rounded-md bg-opacity-10`}>
+          <Icon className={`size-8 ${colorClass.replace("bg-", "text-")}`} />
         </div>
         <span className="text-lg font-semibold text-(--color-primary-cool-gray-80)">
           {title}
@@ -74,9 +65,6 @@ const SummaryCard = ({
       </div>
       <div className="text-3xl font-bold text-(--color-primary-cool-gray-100) text-center">
         {count}
-      </div>
-      <div className="mt-4 h-1 w-full bg-gray-100 rounded-full overflow-hidden">
-        {/* Progress bar placeholder if needed */}
       </div>
     </CardContent>
   </Card>
@@ -98,12 +86,10 @@ export default function Dashboard() {
 
           <div className="flex items-center gap-3">
             <div className="relative">
-              <button className="flex items-center gap-2 px-4 py-2 bg-white border border-(--color-primary-cool-gray-30) rounded-md text-sm text-(--color-primary-cool-gray-80) shadow-sm">
+              <button className="flex items-center gap-2 px-4 py-2 w-64 bg-white border border-(--color-primary-cool-gray-30) rounded-md text-sm text-(--color-primary-cool-gray-80) shadow-sm">
                 <Calendar className="h-4 w-4 text-(--color-primary-cool-gray-50)" />
                 All Dates
-                <span className="ml-2 text-(--color-primary-cool-gray-40)">
-                  ▼
-                </span>
+                <ChevronDown className="ml-auto size-4" />
               </button>
             </div>
 
@@ -127,19 +113,19 @@ export default function Dashboard() {
               title="Batches"
               count={8}
               icon={FileText}
-              colorClass="bg-indigo-500 text-indigo-600"
+              colorClass="text-indigo-900"
             />
             <SummaryCard
               title="Published"
               count={4}
-              icon={CheckCircle}
-              colorClass="bg-blue-500 text-blue-600"
+              icon={FileText}
+              colorClass="text-indigo-900"
             />
             <SummaryCard
               title="Unpublished"
               count={1}
               icon={FileText}
-              colorClass="bg-amber-500 text-amber-600"
+              colorClass="text-indigo-900"
             />
           </div>
 
@@ -147,20 +133,20 @@ export default function Dashboard() {
             <SummaryCard
               title="Rejected"
               count={0}
-              icon={XCircle}
-              colorClass="bg-red-500 text-red-600"
+              icon={FileText}
+              colorClass="text-indigo-900"
             />
             <SummaryCard
               title="Pending"
               count={0}
-              icon={Clock}
-              colorClass="bg-yellow-500 text-yellow-600"
+              icon={FileText}
+              colorClass="text-indigo-900"
             />
             <SummaryCard
               title="Pending-release"
               count={0}
-              icon={Send}
-              colorClass="bg-orange-500 text-orange-600"
+              icon={FileText}
+              colorClass="text-indigo-900"
             />
           </div>
 
@@ -168,21 +154,21 @@ export default function Dashboard() {
             <SummaryCard
               title="Recipients"
               count={1}
-              icon={Users}
-              colorClass="bg-green-500 text-green-600"
+              icon={FileText}
+              colorClass="text-indigo-900"
             />
           </div>
         </div>
 
         {/* Charts Section */}
-        <div className="mt-8 bg-white p-6 rounded-lg shadow-sm border border-[var(--color-primary-cool-gray-20)]">
+        <div className="mt-8 bg-white p-6 rounded-lg shadow-sm border border-(--color-primary-cool-gray-20)">
           <div className="flex justify-end mb-4">
             <select className="text-sm border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
               <option>All Summary</option>
             </select>
           </div>
 
-          <div className="h-[400px] w-full">
+          <div className="h-100 w-full">
             <h3 className="text-center text-lg font-medium mb-4">Main Chart</h3>
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
@@ -258,7 +244,7 @@ export default function Dashboard() {
             </ResponsiveContainer>
           </div>
 
-          <div className="h-[300px] w-full mt-12">
+          <div className="h-75 w-full mt-12">
             <h3 className="text-center text-lg font-medium mb-4">
               Monthly Summary Average
             </h3>
