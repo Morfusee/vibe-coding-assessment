@@ -21,6 +21,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import Switcher from "../ui/switcher";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -46,8 +47,8 @@ const SidebarItem = ({
       className={cn(
         "flex items-center justify-between px-3 py-2 rounded-md transition-colors cursor-pointer text-sm font-medium",
         isActive
-          ? "bg-[var(--color-primary-indigo-70)] text-white"
-          : "text-[var(--color-primary-cool-gray-80)] hover:bg-[var(--color-primary-cool-gray-10)]",
+          ? "bg-(--color-primary-indigo-70) text-white"
+          : "text-(--color-primary-cool-gray-80) hover:bg-(--color-primary-cool-gray-10)",
       )}
       onClick={onClick}
     >
@@ -71,7 +72,7 @@ const SidebarSection = ({
 }) => (
   <div className="mb-4">
     {title && (
-      <h3 className="px-3 mb-2 text-xs font-bold text-[var(--color-primary-cool-gray-50)] uppercase tracking-wider">
+      <h3 className="px-3 mb-2 text-xs font-bold text-(--color-primary-cool-gray-50) uppercase tracking-wider">
         {title}
       </h3>
     )}
@@ -84,17 +85,17 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const path = router.pathname;
 
   return (
-    <div className="flex h-screen bg-[var(--color-custom-background)] overflow-hidden font-sans">
+    <div className="flex h-screen bg-(--color-custom-background) overflow-hidden font-sans">
       {/* Sidebar */}
-      <aside className="w-64 flex-shrink-0 bg-white border-r border-[var(--color-primary-cool-gray-20)] flex flex-col overflow-y-auto">
+      <aside className="w-64 shrink-0 bg-white border-r border-(--color-primary-cool-gray-20) flex flex-col overflow-y-auto">
         <div className="p-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-xl font-heading font-bold text-[var(--color-primary-indigo-100)]">
+            <span className="text-xl font-heading font-bold text-(--color-primary-indigo-100)">
               FilPass
             </span>
           </div>
           <Button variant="ghost" size="icon" className="h-8 w-8">
-            <Menu className="h-5 w-5 text-[var(--color-primary-cool-gray-80)]" />
+            <Menu className="h-5 w-5 text-(--color-primary-cool-gray-80)" />
           </Button>
         </div>
 
@@ -149,33 +150,28 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="h-16 bg-white border-b border-[var(--color-primary-cool-gray-20)] flex items-center justify-between px-6">
+        <header className="h-16 border-(--color-primary-cool-gray-20) flex items-center justify-between px-6">
           <div className="flex items-center gap-4">
-            <span className="text-sm font-medium text-[var(--color-primary-cool-gray-60)]">
+            <span className="text-sm font-medium text-(--color-primary-cool-gray-60)">
               Switch to:
             </span>
-            <div className="flex rounded-md border border-[var(--color-primary-cool-gray-30)] overflow-hidden">
-              <button className="px-3 py-1 text-sm font-medium bg-[var(--color-primary-cool-gray-10)] text-[var(--color-primary-cool-gray-60)]">
-                v1
-              </button>
-              <button className="px-3 py-1 text-sm font-medium bg-[var(--color-primary-indigo-70)] text-white">
-                v2
-              </button>
+            <div className="flex rounded-md border border-(--color-primary-cool-gray-30) overflow-hidden">
+              <Switcher />
             </div>
           </div>
 
           <div className="flex items-center gap-6">
             <div className="relative">
-              <button className="flex items-center gap-2 text-sm text-[var(--color-primary-cool-gray-80)] border border-[var(--color-primary-cool-gray-30)] rounded px-3 py-1.5 bg-white">
+              <button className="flex items-center gap-2 text-sm text-(--color-primary-cool-gray-80) border border-(--color-primary-cool-gray-30) rounded px-3 py-1.5 bg-white">
                 All Departments <ChevronDown className="h-4 w-4" />
               </button>
             </div>
 
-            <button className="flex items-center gap-1 text-sm text-[var(--color-primary-cool-gray-60)] hover:text-[var(--color-primary-indigo-70)]">
+            <button className="flex items-center gap-1 text-sm text-(--color-primary-cool-gray-60) hover:text-(--color-primary-indigo-70)">
               Verify File <ExternalLink className="h-4 w-4" />
             </button>
 
-            <div className="h-8 w-8 rounded-full bg-[var(--color-primary-cool-gray-20)] flex items-center justify-center text-[var(--color-primary-cool-gray-60)]">
+            <div className="h-8 w-8 rounded-full bg-(--color-primary-cool-gray-20) flex items-center justify-center text-(--color-primary-cool-gray-60)">
               <UserCircle className="h-6 w-6" />
             </div>
           </div>
